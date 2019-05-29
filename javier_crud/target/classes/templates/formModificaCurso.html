@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Modifica Curso</title>
+</head>
+<body>
+<form th:object="${curso}" action="/curso/guardaCurso" method="POST">
+<p>Denominacion:<input type="text" th:field="*{denominacion}" th:value="${curso.denominacion}"/>
+<input type="hidden" th:field="*{idcurso}" th:value="${curso.idcurso}"/></p>
+<p><input type="submit" value="Modifica Alumno"/></p>
+</form>
+
+</body>
+</html>

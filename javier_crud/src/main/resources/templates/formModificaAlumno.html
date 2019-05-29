@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Matricula Alumno</title>
+</head>
+<body>
+<form th:object="${alumno}" action="/alumno/guardaAlumno" method="POST">
+<p>Nombre:<input type="text" th:field="*{nombre}" th:value="${alumno.nombre}"/>
+<input type="hidden" th:field="*{idalumno}" th:value="${alumno.idalumno}"/></p>
+<p><input type="submit" value="Modifica Alumno"/></p>
+</form>
+
+</body>
+</html>

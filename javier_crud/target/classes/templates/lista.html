@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>CRUD de Alumnos</h1>
+<table>
+<tr>
+<th>Nombre</th>
+<th>Accion</th>
+<th>Cursos</th>
+</tr>
+<tr th:each="alumno: ${lista}">
+<td th:text="${alumno.nombre}"/>
+<td><a th:href="@{eliminaAlumno(idalumno=${alumno.idalumno})}">Elimina</a>
+<a th:href="@{modificaAlumno(idalumno=${alumno.idalumno})}">Modifica</a>
+<a th:href="@{matriculaAlumno(idalumno=${alumno.idalumno})}">Matricular</a></td>
+<td th:each="cursos: ${alumno.cursos}"><span th:text="${cursos.curso.denominacion}"></span></td>
+</tr>
+</table>
+<a href="/alumno/formInserta">Inserta Alumno</a>
+</body>
+</html>
