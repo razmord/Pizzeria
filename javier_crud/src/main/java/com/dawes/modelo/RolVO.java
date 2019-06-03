@@ -69,5 +69,20 @@ public class RolVO {
 			return false;
 		return true;
 	}
+	public RolVO(int idrol, String nombre, List<UsuarioVO> usuarios) {
+		super();
+		this.idrol = idrol;
+		Nombre = nombre;
+		this.usuarios = usuarios;
+	}
+	public RolVO(String nombre, List<UsuarioVO> usuarios) {
+		super();
+		Nombre = nombre;
+		this.usuarios = usuarios;
+	}
+	public RolVO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	
 }

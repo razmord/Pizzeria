@@ -1,9 +1,13 @@
 package com.dawes.modelo;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -16,6 +20,21 @@ public class ProductoVO {
 	private String nombre;
 	private String descripción;
 	private float precio;
+	private String imagen;
+	@OneToMany(mappedBy="producto", fetch=FetchType.EAGER)
+	private List<PedidoProductoVO> pedidos;	
+	public List<PedidoProductoVO> getPedidos() {
+		return pedidos;
+	}
+	public void setPedidos(List<PedidoProductoVO> pedidos) {
+		this.pedidos = pedidos;
+	}
+	public String getImagen() {
+		return imagen;
+	}
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
 	public int getIdproducto() {
 		return idproducto;
 	}
@@ -79,6 +98,28 @@ public class ProductoVO {
 	public String toString() {
 		return "ProductoVO [idproducto=" + idproducto + ", nombre=" + nombre + ", descripción=" + descripción
 				+ ", precio=" + precio + "]";
+	}
+	public ProductoVO(int idproducto, String nombre, String descripción, float precio, String imagen,
+			List<PedidoProductoVO> pedidos) {
+		super();
+		this.idproducto = idproducto;
+		this.nombre = nombre;
+		this.descripción = descripción;
+		this.precio = precio;
+		this.imagen = imagen;
+		this.pedidos = pedidos;
+	}
+	public ProductoVO(String nombre, String descripción, float precio, String imagen, List<PedidoProductoVO> pedidos) {
+		super();
+		this.nombre = nombre;
+		this.descripción = descripción;
+		this.precio = precio;
+		this.imagen = imagen;
+		this.pedidos = pedidos;
+	}
+	public ProductoVO() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	
 	

@@ -118,5 +118,29 @@ public class UsuarioVO {
 		return "UsuarioVO [idusuario=" + idusuario + ", nombre=" + nombre + ", direccion=" + direccion + ", telefono="
 				+ telefono + ", DNI=" + DNI + "]";
 	}
+	public UsuarioVO(String idusuario, String nombre, String direccion, int telefono, String dNI, RolVO rol,
+			List<PedidoVO> pedidos) {
+		super();
+		this.idusuario = idusuario;
+		this.nombre = nombre;
+		this.direccion = direccion;
+		this.telefono = telefono;
+		DNI = dNI;
+		this.rol = rol;
+		this.pedidos = pedidos;
+	}
+	public UsuarioVO(String nombre, String direccion, int telefono, String dNI, RolVO rol, List<PedidoVO> pedidos) {
+		super();
+		this.nombre = nombre;
+		this.direccion = direccion;
+		this.telefono = telefono;
+		DNI = dNI;
+		this.rol = rol;
+		this.pedidos = pedidos;
+	}
+	public UsuarioVO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	
 }
